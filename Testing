@@ -1,0 +1,11 @@
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Example: Predicting PPG
+X = df[['Age', 'MinutesPerGame']]
+y = df['PointsPerGame']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
