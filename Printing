@@ -1,0 +1,11 @@
+lebron_next = [[41, 32]]
+predicted_ppg = model.predict(lebron_next)
+print("Predicted PPG:", predicted_ppg[0])
+
+import matplotlib.pyplot as plt
+
+plt.plot(df['Season'], df['PointsPerGame'], label="Actual")
+plt.plot(df['Season'], model.predict(X), label="Predicted")
+plt.title("LeBron James - Points Per Game Prediction")
+plt.legend()
+plt.show()
